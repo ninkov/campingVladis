@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
+body{
+
+  font-family: 'PT Sans',sans-serif;
+  font-size: 16px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+body{
+
+  background: url(img/wall.jpeg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover
+ 
+}
+.navigation{
+  padding: 0 20px;
+}
+.navigation p{
+  display: inline-block;
+  /* padding: 0 auto; */
+  width: 273px;
+
+}
+
+nav{
+  display: inline-block;
+  font-size: 20px;
+  
+}
+.navigation p span{
+
+color: #50b9e1;
+}
+li{
+  display: inline-block;
+  padding-right: 10px;
+}
+a{
+  text-decoration: none;
+  color: gray;
+}
+ul{
+  padding: 0px;
+}
+a:hover{
+  color: #78e2de;
+  cursor: pointer;
+}
+.module {
+  cursor: url('img/download.png'), auto;	
+}
+/*site-header*/
+
+
+.site-headar{
+  background: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,1)),url(./img/wall.jpeg),no-repeat;
+  background-size: cover;
+}
+/* .site-header h1{
+  font-size: 45px;
+  color: white;
+}
+.site-header button{
+ font-size: 26px;
+ background: transparent;
+ border-width: 2px;
+ border-color: white;
+ border-style: solid;
+ border-radius: 15px;
+ color: white;
+} */
