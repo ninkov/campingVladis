@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/7e7daefd1b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="gallery.css">
+    <link rel="stylesheet" href="style.css">
+
+    <title>GALLERY</title>
+</head>
+</style>
+
+<body>
+    <section class="navigation">
+        <p><span></p>
+        <nav>
+            <ul>
+                <li><a href="index.html">ABOUT US</a></li>
+                <li><a href="#">OFFERINGS</a></li>
+                <li><a href="gallery.html">GALLERY</a></li>
+                <li><a href="#">BLOG</a></li>
+                <li><a href="#">CONTACT US</a></li>
+                <li>
+                    <ul>
+                        <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+
+
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </section>
+
+    <div class="container">
+        <div class="mySlides">
+            <!-- <div class="numbertext">1 / 6</div> -->
+            <img src="./img/1.jpeg" style="width:90%">
+        </div>
+
+        <div class="mySlides">
+            <img src="./img/2.jpeg" style="width:90%">
+        </div>
+
+        <div class="mySlides">
+
+            <img src="./img/10.jpeg" style="width:90%">
+        </div>
+
+        <div class="mySlides">
+
+            <img src="./img/4.jpeg" style="width:90%">
+        </div>
+
+        <div class="mySlides">
+
+            <img src="./img/5.jpeg" style="width:90%">
+        </div>
+
+        <div class="mySlides">
+
+            <img src="./img/6.jpeg" style="width:90%">
+        </div>
+        <div class="mySlides">
+
+            <img src="./img/7.jpeg" style="width:90%">
+        </div>
+        <div class="mySlides">
+            <img src="./img/8.jpeg" style="width:90%">
+        </div>
+        <div class="mySlides">
+
+            <img src="./img/9.jpeg" style="width:90%">
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+
+        <div class="caption-container">
+            <p id="caption"></p>
+        </div>
+
+        <div class="row">
+            <div class="column">
+                <img class="demo cursor" src="./img/1.jpeg" style="width:90%" onclick="currentSlide(1)"
+                    alt="КЪМПИНГ ВЛАДИС">
+            </div>
+            <div class="column">
+                <img class="demo cursor" src="./img/2.jpeg" style="width:90%" onclick="currentSlide(2)"
+                    alt="КЪМПИНГ ВЛАДИС">
+            </div>
+            <div class="column">
+                <img class="demo cursor" src="./img/10.jpeg" style="width:90%" onclick="currentSlide(3)"
+                    alt="КЪМПИНГ ВЛАДИС">
+            </div>
+            <div class="column">
+                <img class="demo cursor" src="./img/4.jpeg" style="width:90%" onclick="currentSlide(4)"
+                    alt="КЪМПИНГ ВЛАДИС">
+            </div>
+            <div class="column">
+                <img class="demo cursor" src="./img/5.jpeg" style="width:90%" onclick="currentSlide(5)"
+                    alt="КЪМПИНГ ВЛАДИС">
+            </div>
+            <div class="column">
+                <img class="demo cursor" src="./img/6.jpeg" style="width:90%" onclick="currentSlide(6)"
+                    alt ="КЪМПИНГ ВЛАДИС">
+            </div>
+            <div class="column">
+                <img class="demo cursor" src="./img/7.jpeg" style="width:90%" onclick="currentSlide(7)"
+                    alt ="КЪМПИНГ ВЛАДИС">
+            </div>
+            <div class="column">
+                <img class="demo cursor" src="./img/8.jpeg" style="width:90%" onclick="currentSlide(8)"
+                    alt ="КЪМПИНГ ВЛАДИС">
+            </div>
+            <div class="column">
+                <img class="demo cursor" src="./img/9.jpeg" style="width:90%" onclick="currentSlide(9)"
+                    alt ="КЪМПИНГ ВЛАДИС">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("demo");
+            let captionText = document.getElementById("caption");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            captionText.innerHTML = dots[slideIndex - 1].alt;
+        }
+    </script>
+
+</body>
+
+</html>
