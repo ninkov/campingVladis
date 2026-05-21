@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "vite",
     "generate:lqip": "node scripts/generate-lqip.js",
-    "prebuild": "npm run generate:lqip",
+    "generate:og": "node scripts/generate-og-cover.js",
+    "prebuild": "npm run generate:lqip && npm run generate:og",
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint \"src/**/*.{js,jsx}\" --max-warnings=0",
