@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --radius: 14px;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+@layer base {
+  body {
+    @apply bg-surface text-foreground font-sans;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+.bg-surface {
+  background-image: linear-gradient(180deg, #fbfbf7 0%, #f3f1ec 100%);
+}
+
+.text-foreground {
+  color: #0f172a;
+}
+
+.accent {
+  color: #6b705c;
+}
+
+.btn {
+  @apply inline-flex items-center gap-2 px-4 py-2 rounded-md font-medium shadow-sm transition transform;
+}
+
+.btn-primary {
+  @apply btn bg-ember text-white hover:brightness-95;
+}
+
+.btn-ghost {
+  @apply btn border border-gray-200 bg-white/60 hover:bg-white;
+}
+
+.card {
+  border-radius: var(--radius);
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.08);
+}
+
+.hero-fade {
+  animation: fadeUp 900ms cubic-bezier(0.2, 0.9, 0.3, 1) both;
+}
+
+.btn-primary {
+  box-shadow: 0 6px 18px rgba(240, 122, 75, 0.18);
+  transition:
+    transform 220ms cubic-bezier(0.2, 0.9, 0.3, 1),
+    box-shadow 220ms;
+}
+.btn-primary:hover {
+  transform: translateY(-3px) scale(1.01);
+}
+
+.pulse {
+  animation: pulse 2.5s infinite;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Lightbox arrow tweaks */
+.lg-arrow {
+  background: rgba(0, 0, 0, 0.24);
+  backdrop-filter: blur(4px);
+}
+.lg-arrow:hover {
+  background: rgba(0, 0, 0, 0.44);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Ensure focused/anchor scrolling accounts for the sticky header on small screens */
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: 5rem;
+  }
+}
